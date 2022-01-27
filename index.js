@@ -8,6 +8,7 @@ const { getFirestore, Timestamp, FieldValue } = require('firebase-admin/firestor
 //import credentials
 const credentials = require('./credentials.json');
 
+
 //connect to firebasae services
 initializeApp({
     credential: cert(credentials)
@@ -18,12 +19,38 @@ const db = getFirestore();
 
 // create a collection called "restaurants"
 
+const restRef = db.collection('restaurants')
 
 // add each restaurant
-db.collection('restaurants').add(restaurants[1])
+restRef.add(restaurants[3])
 .then(doc => {
     console.log('Added restaurant', doc.id); // id auto-generated 
 })
 .catch(err =>{
     console.error(err);
 });
+
+//read one collection
+// restRef.doc('h8bzJ0Bg2tfbfk9DPZoI').get()
+//     .then(doc => {
+//         console.log(doc.id, ' => ', doc.data());
+//     })
+//     .catch(err => console.error(err));
+
+//get all documents
+// restRef.get()
+// .then(snapshot => {
+//     snapshot.forEach(doc => {
+//         console.log(doc.id, '=>', doc.data())
+//     })
+// })
+// .catch(console.error)
+
+//find a document(s)/ querying a collection
+restRef.where('name','==','Bolay').get()
+.then(snapshot => {
+    snapshot.forEach(doc => {
+        console.log(doc.data());
+    });
+})
+.catch(console.error);
