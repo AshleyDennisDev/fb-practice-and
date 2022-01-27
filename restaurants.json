@@ -1,0 +1,27 @@
+[
+    {
+        "name": "Bolay",
+        "location": "Boca Raton FL",
+        "type": "Healthy American",
+        "price": "$$"
+    },
+    {
+        "name": "El Camino",
+        "location": "Delray FL",
+        "type": "Fancy Mexican",
+        "price": "$$$"
+    },
+    {
+        "name": "Pollo Tropical",
+        "location": "Boca Raton FL",
+        "type": "Fast Cuban Food",
+        "price": "$"
+    },
+    {
+        "name": "Souvlaki Fast",
+        "location": "Boca Raton FL",
+        "type": "Greek American",
+        "price": "$$"
+    }
+
+]
