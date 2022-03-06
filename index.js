@@ -30,21 +30,21 @@ restRef.add(restaurants[3])
     console.error(err);
 });
 
-//read one collection
-// restRef.doc('h8bzJ0Bg2tfbfk9DPZoI').get()
-//     .then(doc => {
-//         console.log(doc.id, ' => ', doc.data());
-//     })
-//     .catch(err => console.error(err));
+//read one document
+restRef.doc('h8bzJ0Bg2tfbfk9DPZoI').get()
+    .then(doc => {
+        console.log(doc.id, ' => ', doc.data());
+    })
+    .catch(err => console.error(err));
 
 //get all documents
-// restRef.get()
-// .then(snapshot => {
-//     snapshot.forEach(doc => {
-//         console.log(doc.id, '=>', doc.data())
-//     })
-// })
-// .catch(console.error)
+restRef.get()
+.then(snapshot => {
+    snapshot.forEach(doc => {
+        console.log(doc.id, '=>', doc.data())
+    })
+})
+.catch(console.error)
 
 //find a document(s)/ querying a collection
 restRef.where('name','==','Bolay').get()
